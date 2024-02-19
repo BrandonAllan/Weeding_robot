@@ -1,0 +1,459 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  <material name="black">
+    <color rgba="0 0 0 1" />
+  </material>
+
+  <material name="gray">
+    <color rgba="0.3 0.3 0.3 1" />
+  </material>
+
+  <material name="white">
+    <color rgba="1 1 1 1" />
+  </material>
+
+  <material name="orange">
+    <color rgba="1 0.3 0.1 1" />
+  </material>
+
+  <material name="blue">
+    <color rgba="0.2 0.2 1 1" />
+  </material>
+
+  <!--BASE LINK-->
+
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="0.046234 -0.00096018 -0.47057"
+        rpy="0 0 0" />
+      <mass
+        value="11.59" />
+      <inertia
+        ixx="2.7487"
+        ixy="0.000"
+        ixz="0.21609"
+        iyy="7.7539"
+        iyz="0.000"
+        izz="9.135" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!--LEFT WHEEL LINK-->
+
+  <link
+    name="Left_wheel">
+    <inertial>
+      <origin
+        xyz="0.000061067 -0.0010099 0.045157"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.037507"
+        ixy="0.00024657"
+        ixz="-0.00042617"
+        iyy="0.036946"
+        iyz="0.0016924"
+        izz="0.065317" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Left_wheel.STL" />
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="Left_wheel">
+    <material>Gazebo/Gray</material>
+    <mu1 value="0.4"/>
+    <mu2 value="0.4"/>
+  </gazebo>
+
+  <joint
+    name="Left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.50046 0.40877 -0.92806"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Left_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+
+  <!--RIGHT WHEEL LINK-->
+
+  <link
+    name="Right_wheel">
+    <inertial>
+      <origin
+        xyz="-0.000061067 -0.0010099 0.045157"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.037507"
+        ixy="0.00024657"
+        ixz="-0.00042617"
+        iyy="0.036946"
+        iyz="0.0016924"
+        izz="0.065317" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Right_wheel.STL" />
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="Right_wheel">
+    <material>Gazebo/Gray</material>
+    <mu1 value="0.4"/>
+    <mu2 value="0.4"/>
+  </gazebo>
+
+  <joint
+    name="Right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.50046 -0.4997 -0.92806"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Right_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+
+  <!--BASE CASTER LEFT LINK-->
+
+  <link
+    name="Base_caster_left">
+    <inertial>
+      <origin
+        xyz="-0.032832 -0.00018128 0.056902"
+        rpy="0 0 0" />
+      <mass
+        value="0.45" />
+      <inertia
+        ixx="0.025915"
+        ixy="0.00044677"
+        ixz="0.0087669"
+        iyy="0.025098"
+        iyz="0.0047946"
+        izz="0.018083" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Base_caster_left.STL" />
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Base_caster_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="Base_caster_left">
+    <material>Gazebo/Blue</material>
+    <mu1 value="0.2"/>
+    <mu2 value="0.2"/>
+  </gazebo>
+
+  <joint
+    name="Base_caster_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.5 0.38 -0.758"
+      rpy="-3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Base_caster_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+
+  <!--CASTER WHEEL LEFT LINK-->
+
+  <link
+    name="Caster_wheel_left">
+    <inertial>
+      <origin
+        xyz="-0.00030285 0.0010085 0.0076161"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.037507"
+        ixy="0.00024657"
+        ixz="-0.00042617"
+        iyy="0.036946"
+        iyz="0.0016924"
+        izz="0.065317" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Caster_wheel_left.STL" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Caster_wheel_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="Caster_wheel_left">
+    <material>Gazebo/White</material>
+    <mu1 value="0.4"/>
+    <mu2 value="0.4"/>
+  </gazebo>
+
+  <joint
+    name="Caster_wheel_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.09675 0.0072514 0.17"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Base_caster_left" />
+    <child
+      link="Caster_wheel_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+
+  <!--BASE CASTER RIGHT LINK-->
+
+  <link
+    name="Base_caster_right">
+    <inertial>
+      <origin
+        xyz="-0.032832 -0.00018128 0.056902"
+        rpy="0 0 0" />
+      <mass
+        value="0.45" />
+      <inertia
+        ixx="0.025915"
+        ixy="0.00044677"
+        ixz="0.0087669"
+        iyy="0.025098"
+        iyz="0.0047946"
+        izz="0.018083" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Base_caster_right.STL" />
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Base_caster_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="Base_caster_right">
+    <material>Gazebo/Blue</material>
+    <mu1 value="0.2"/>
+    <mu2 value="0.2"/>
+  </gazebo>
+
+  <joint
+    name="Base_caster_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.5 -0.38 -0.758"
+      rpy="-3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Base_caster_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+
+  <!--CASTER WHEEL RIGHT LINK-->
+
+  <link
+    name="Caster_wheel_right">
+    <inertial>
+      <origin
+        xyz="0.00030285 -0.0010085 0.0076161"
+        rpy="0 0 0" />
+      <mass
+        value="1.0" />
+      <inertia
+        ixx="0.037507"
+        ixy="0.00024657"
+        ixz="-0.00042617"
+        iyy="0.036946"
+        iyz="0.0016924"
+        izz="0.065317" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Caster_wheel_right.STL" />
+      </geometry>
+      <material name="white" />
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agri_robot_description/meshes/Caster_wheel_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="Caster_wheel_right">
+    <material>Gazebo/White</material>
+    <mu1 value="0.4"/>
+    <mu2 value="0.4"/>
+  </gazebo>
+
+  <joint
+    name="Caster_wheel_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.09675 0.0072514 0.17"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="Base_caster_right" />
+    <child
+      link="Caster_wheel_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+</robot>
