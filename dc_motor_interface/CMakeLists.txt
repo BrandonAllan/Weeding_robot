@@ -7,9 +7,34 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(hardware_interface REQUIRED)
+find_package(pluginlib REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+
+add_library(
+  ${PROJECT_NAME}
+  SHARED
+  /home/brandon/weeding_robot/src/dc_motor_interface/diff_drive_robot.cpp
+)
+
+target_include_directories(
+  ${PROJECT_NAME}
+  PRIVATE
+  include
+)
+
+ament_target_dependencies(
+  ${PROJECT_NAME}
+  hardware_interface
+  pluginlib
+  rclcpp
+  rclcpp_lifecycle
+
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

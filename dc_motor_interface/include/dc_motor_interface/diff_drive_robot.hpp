@@ -14,8 +14,8 @@ namespace diff_drive_robot
 class DiffRobotHardware : public hardware_interface::SystemInterface
 {
 public:
-    RCLCPP_SHARED_PTR_DEFINITIONS(DiffRobotHardware);
-
+    RCLCPP_SHARED_PTR_DEFINITIONS(DiffRobotHardware)
+    
     DIFF_DRIVE_ROBOT_PUBLIC
     hardware_interface::CallbackReturn on_init(const hardware_interface::HardwareInfo &info) override;
 
