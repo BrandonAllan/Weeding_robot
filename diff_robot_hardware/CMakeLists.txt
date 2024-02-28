@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(dc_motor_interface)
+project(diff_robot_hardware)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -18,7 +18,7 @@ find_package(rclcpp_lifecycle REQUIRED)
 add_library(
   ${PROJECT_NAME}
   SHARED
-  /home/brandon/weeding_robot/src/dc_motor_interface/diff_drive_robot.cpp
+  src/diff_robot_hardware/diff_drive_robot.cpp
 )
 
 target_include_directories(
