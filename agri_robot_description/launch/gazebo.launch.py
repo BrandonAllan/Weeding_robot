@@ -15,8 +15,8 @@ def generate_launch_description():
 
     display = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory(package_name),'launch','display.launch.py'
-                )]), launch_arguments={'use_sim_time': 'true'}.items()
+                    get_package_share_directory(package_name),'launch','display.launch.py')]),
+                    launch_arguments={'use_sim_time': 'true'}.items()
     )
 
     gazebo = IncludeLaunchDescription(

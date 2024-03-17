@@ -12,16 +12,21 @@ from launch_ros.actions import Node
 def generate_launch_description():
 
     description_package = 'agri_robot_description'
+    package_name = 'weeding_robot'
+    gazebo_params = os.path.join(get_package_share_directory(package_name),'config','gazebo.yaml')
+
+
 
     display = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory(description_package),'launch','display.launch.py'
-                )]), launch_arguments={'use_sim_time': 'true'}.items()
+                    get_package_share_directory(description_package),'launch','display.launch.py')]),
+                    launch_arguments={'use_sim_time': 'true'}.items()
     )
 
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
+                    launch_arguments={'extra_gazebo_args': '--ros-args --params-file ' + gazebo_params}.items()
              )
     
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',

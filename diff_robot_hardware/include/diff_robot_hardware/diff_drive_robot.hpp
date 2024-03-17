@@ -8,6 +8,7 @@
 #include "rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
 #include "visibility_control.h"
+#include "diff_robot_hardware/arduino_comms.hpp"
 
 namespace diff_drive_robot
 {
@@ -38,9 +39,17 @@ public:
     hardware_interface::return_type write(const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
 private:
-    std::vector<double> hw_commands_;
-    std::vector<double> hw_positions_;
-    std::vector<double> hw_velocities_;
+    
+    ArduinoComms comms_;
+    
+    std::string left_wheel_name = "";
+    std::string right_wheel_name = "";
+    float loop_rate = 0.0;
+    std::string device = "";
+    int baud_rate = 0;
+    int timeout_ms = 0;
+    int enc_counts_per_rev = 0;
+
 };
 }
 #endif 
