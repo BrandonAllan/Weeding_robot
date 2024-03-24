@@ -21,13 +21,13 @@ class CropDetector(Node):
         self.bridge = CvBridge()
 
         # Threshold for confidence score
-        self.threshold = 0.5
+        self.threshold = 0.6
 
     def extract_crop_coordinates(self, results):
         crop_coordinates = []
-        for result in results.xyxy[0]:  # Assuming YOLO results are in the format (x1, y1, x2, y2, conf, class)
-            x1, y1, x2, y2, conf, class_id = result
-            if conf > self.threshold and class_id == 0:  # Assuming crops are labeled as class 0
+        for result in results.boxes.data.tolist():  # Assuming YOLO results are in the format (x1, y1, x2, y2, conf, class)
+            x1, y1, x2, y2, score, class_id = result
+            if score > self.threshold and class_id == 0:  # Assuming crops are labeled as class 0
                 center_x = (x1 + x2) / 2
                 center_y = (y1 + y2) / 2
                 crop_coordinates.append((center_x, center_y))
@@ -40,12 +40,12 @@ class CropDetector(Node):
             self.get_logger().error(f"Error converting image: {e}")
             return
         
-        results = self.model(cv_image)
+        results = self.model(cv_image)[0]
         crop_coordinates = self.extract_crop_coordinates(results)
 
-        # Publish the image with bounding boxes (optional)
+        '''# Publish the image with bounding boxes (optional)
         img_out = self.bridge.cv2_to_imgmsg(results.render(), "bgr8")
-        self.image_out_pub.publish(img_out)
+        self.image_out_pub.publish(img_out)'''
 
         # Publish detected crop coordinates
         if len(crop_coordinates) > 0:
@@ -59,5 +59,8 @@ def main(args=None):
     rclpy.spin(crop_detector)
     crop_detector.destroy_node()
     rclpy.shutdown()   
+
+if __name__ == '__main__':
+    main()
 
  
