@@ -18,6 +18,53 @@
         <falloff>0</falloff>
       </spot>
     </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
@@ -42,724 +89,6 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <state world_name='default'>
-      <sim_time>5368 49000000</sim_time>
-      <real_time>550 257871597</real_time>
-      <wall_time>1711298386 176702400</wall_time>
-      <iterations>545324</iterations>
-      <model name='mud_box'>
-        <pose>9 5 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>9 5 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='mud_box_0'>
-        <pose>-7 5 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-7 5 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='mud_box_1'>
-        <pose>1 5 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>1 5 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='mud_box_2'>
-        <pose>-7 -5 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-7 -5 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='mud_box_3'>
-        <pose>1 -5 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>1 -5 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='mud_box_4'>
-        <pose>9 -5 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>9 -5 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1'>
-        <pose>-2.67544 4.76857 -0.144683 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-2.67544 4.76857 -0.144683 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_0'>
-        <pose>-2.0847 4.79887 -0.138826 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-2.0847 4.79887 -0.138826 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_1'>
-        <pose>-1.84288 4.82496 -0.148907 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-1.84288 4.82496 -0.148907 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_10'>
-        <pose>2.70451 4.73367 -0.194412 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>2.70451 4.73367 -0.194412 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_11'>
-        <pose>3.28345 4.75745 -0.179412 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>3.28345 4.75745 -0.179412 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_12'>
-        <pose>3.80679 4.76461 -0.147909 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>3.80679 4.76461 -0.147909 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_13'>
-        <pose>4.01997 4.73707 -0.174448 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>4.01997 4.73707 -0.174448 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_14'>
-        <pose>4.51952 4.82227 -0.145008 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>4.51952 4.82227 -0.145008 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_2'>
-        <pose>-0.987548 4.8304 -0.141535 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-0.987548 4.8304 -0.141535 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_3'>
-        <pose>-0.67824 4.85202 -0.184514 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-0.67824 4.85202 -0.184514 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_4'>
-        <pose>-0.213185 4.80216 -0.165761 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-0.213185 4.80216 -0.165761 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_5'>
-        <pose>0.286959 4.87802 -0.15082 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.286959 4.87802 -0.15082 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_6'>
-        <pose>0.539062 4.87021 -0.170587 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.539062 4.87021 -0.170587 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_7'>
-        <pose>0.844283 4.86512 -0.211864 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.844283 4.86512 -0.211864 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_8'>
-        <pose>1.72927 4.81251 -0.150134 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>1.72927 4.81251 -0.150134 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_1_9'>
-        <pose>2.33878 4.74799 -0.200683 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>2.33878 4.74799 -0.200683 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2'>
-        <pose>-2.204 4.7548 0.106083 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-2.204 4.7548 0.106083 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_0'>
-        <pose>-1.42608 4.83933 0.12502 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-1.42608 4.83933 0.12502 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_1'>
-        <pose>-1.17584 4.78732 0.104456 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-1.17584 4.78732 0.104456 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_2'>
-        <pose>-0.342763 4.8669 0.081657 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>-0.342763 4.8669 0.081657 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_3'>
-        <pose>0.134673 4.89342 0.068396 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0.134673 4.89342 0.068396 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_4'>
-        <pose>1.19878 4.8774 0.104639 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>1.19878 4.8774 0.104639 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_5'>
-        <pose>1.49262 4.84122 0.099221 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>1.49262 4.84122 0.099221 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_6'>
-        <pose>2.14518 4.79103 0.100098 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>2.14518 4.79103 0.100098 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_7'>
-        <pose>3.07022 4.74083 0.092794 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>3.07022 4.74083 0.092794 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_8'>
-        <pose>3.57012 4.81481 0.097123 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>3.57012 4.81481 0.097123 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plant_2_9'>
-        <pose>4.40432 4.80357 0.106809 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>4.40432 4.80357 0.106809 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <light name='sun'>
-        <pose>0 0 10 0 -0 0</pose>
-      </light>
-    </state>
-    <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose>-6.9238 5.4034 12.3812 0 1.0268 -0.011997</pose>
-        <view_controller>orbit</view_controller>
-        <projection_type>perspective</projection_type>
-      </camera>
-    </gui>
-    <model name='mud_box_0'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>8 10 0.2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual_1'>
-          <pose>-2 2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_2'>
-          <pose>2 2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_3'>
-          <pose>2 -2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_4'>
-          <pose>-2 -2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-4.08567 -5.09751 0 0 -0 0</pose>
-    </model>
-    <model name='mud_box_2'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>8 10 0.2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual_1'>
-          <pose>-2 2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_2'>
-          <pose>2 2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_3'>
-          <pose>2 -2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_4'>
-          <pose>-2 -2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>-6.52061 -4.16798 0 0 -0 0</pose>
-    </model>
-    <model name='mud_box_3'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>8 10 0.2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual_1'>
-          <pose>-2 2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_2'>
-          <pose>2 2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_3'>
-          <pose>2 -2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_4'>
-          <pose>-2 -2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>1.08477 -5.33391 0 0 -0 0</pose>
-    </model>
-    <model name='mud_box_4'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>8 10 0.2</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual_1'>
-          <pose>-2 2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_2'>
-          <pose>2 2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_3'>
-          <pose>2 -2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <visual name='visual_4'>
-          <pose>-2 -2.5 0 0 -0 0</pose>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <box>
-              <size>4 5 0.2</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://mud_box/materials/scripts</uri>
-              <uri>model://mud_box/materials/textures</uri>
-              <name>vrc/mud</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>9.21067 -5.16397 0 0 -0 0</pose>
-    </model>
     <model name='mud_box'>
       <static>1</static>
       <link name='link'>
@@ -851,7 +180,100 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>12.6642 6.2323 0 0 -0 0</pose>
+      <pose>4.03599 -5.06123 0 0 -0 0</pose>
+    </model>
+    <model name='mud_box_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8 10 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_1'>
+          <pose>-2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_2'>
+          <pose>2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_3'>
+          <pose>2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_4'>
+          <pose>-2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-4.06483 -5.04057 0 0 -0 0</pose>
     </model>
     <model name='mud_box_1'>
       <static>1</static>
@@ -944,8 +366,656 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose>9.96722 -5.47319 0 0 -0 0</pose>
+      <pose>-4.0963 5.25596 0 0 -0 0</pose>
     </model>
+    <model name='mud_box_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8 10 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_1'>
+          <pose>-2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_2'>
+          <pose>2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_3'>
+          <pose>2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_4'>
+          <pose>-2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>4.14967 5.07946 0 0 -0 0</pose>
+    </model>
+    <model name='mud_box_3'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8 10 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_1'>
+          <pose>-2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_2'>
+          <pose>2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_3'>
+          <pose>2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_4'>
+          <pose>-2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-1.34836 5.22238 0 0 -0 0</pose>
+    </model>
+    <model name='mud_box_4'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>8 10 0.2</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual_1'>
+          <pose>-2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_2'>
+          <pose>2 2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_3'>
+          <pose>2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='visual_4'>
+          <pose>-2 -2.5 0 0 -0 0</pose>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <box>
+              <size>4 5 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://mud_box/materials/scripts</uri>
+              <uri>model://mud_box/materials/textures</uri>
+              <name>vrc/mud</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.191863 -5.50528 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>1704 535000000</sim_time>
+      <real_time>1708 307309244</real_time>
+      <wall_time>1711381133 90944306</wall_time>
+      <iterations>1704535</iterations>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box'>
+        <pose>8 -5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8 -5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_0'>
+        <pose>-8 -5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-8 -5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_1'>
+        <pose>-8 5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-8 5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_2'>
+        <pose>8 5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>8 5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_3'>
+        <pose>0.002176 5.00031 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.002176 5.00031 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='mud_box_4'>
+        <pose>0 -5 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 -5 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1'>
+        <pose>-3.80112 4.87768 -0.150072 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-3.80112 4.87768 -0.150072 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_0'>
+        <pose>-3.13045 4.87418 -0.163468 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-3.13045 4.87418 -0.163468 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_1'>
+        <pose>-2.84926 4.85798 -0.154521 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.84926 4.85798 -0.154521 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_10'>
+        <pose>1.61239 5.06162 -0.153827 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.61239 5.06162 -0.153827 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_11'>
+        <pose>2.33164 5.09094 -0.185896 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.33164 5.09094 -0.185896 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_12'>
+        <pose>2.98921 5.05866 -0.187444 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.98921 5.05866 -0.187444 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_13'>
+        <pose>3.5849 5.13435 -0.165469 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.5849 5.13435 -0.165469 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_2'>
+        <pose>-2.12466 4.84715 -0.148816 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.12466 4.84715 -0.148816 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_3'>
+        <pose>-1.8684 4.8633 -0.161726 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-1.8684 4.8633 -0.161726 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_4'>
+        <pose>-1.66257 4.93417 -0.180392 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-1.66257 4.93417 -0.180392 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_5'>
+        <pose>-0.926211 4.9167 -0.217501 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.926211 4.9167 -0.217501 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_6'>
+        <pose>-0.541933 4.9634 -0.213222 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.541933 4.9634 -0.213222 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_7'>
+        <pose>0.115246 4.97407 -0.204427 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.115246 4.97407 -0.204427 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_8'>
+        <pose>0.385819 4.99535 -0.181116 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.385819 4.99535 -0.181116 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_1_9'>
+        <pose>1.11758 5.02942 -0.155086 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.11758 5.02942 -0.155086 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2'>
+        <pose>-3.42795 4.84718 0.098888 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-3.42795 4.84718 0.098888 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_0'>
+        <pose>-2.48698 4.82011 0.113297 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.48698 4.82011 0.113297 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_1'>
+        <pose>-2.30306 4.80388 0.104399 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-2.30306 4.80388 0.104399 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_10'>
+        <pose>2.8879 5.09244 0.101617 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.8879 5.09244 0.101617 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_11'>
+        <pose>3.32894 5.0899 0.092056 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.32894 5.0899 0.092056 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_12'>
+        <pose>3.49856 5.10516 0.100726 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>3.49856 5.10516 0.100726 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_2'>
+        <pose>-1.38525 4.91399 0.101577 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-1.38525 4.91399 0.101577 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_3'>
+        <pose>-0.041501 4.97823 0.094911 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-0.041501 4.97823 0.094911 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_4'>
+        <pose>0.664996 4.98672 0.093083 0 0 -0.565079</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.664996 4.98672 0.093083 0 0 -0.565079</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_5'>
+        <pose>0.957901 4.98892 0.096128 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0.957901 4.98892 0.096128 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_6'>
+        <pose>1.51075 5.03168 0.089854 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.51075 5.03168 0.089854 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_7'>
+        <pose>1.98111 5.0687 0.10645 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.98111 5.0687 0.10645 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_8'>
+        <pose>2.2622 5.06904 0.105269 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.2622 5.06904 0.105269 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plant_2_9'>
+        <pose>2.70595 5.12948 0.097048 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>2.70595 5.12948 0.097048 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
     <model name='plant_1'>
       <link name='link'>
         <self_collide>0</self_collide>
@@ -968,23 +1038,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -996,7 +1062,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -1049,7 +1115,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-2.67544 4.61674 0 0 -0 0</pose>
+      <pose>-3.80112 4.87768 0 0 -0 0</pose>
     </model>
     <model name='plant_2'>
       <link name='link'>
@@ -1073,17 +1139,17 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
             </script>
-            <shader type='pixel'>
+            <shader type='normal_map_tangent_space'>
               <normal_map>__default__</normal_map>
             </shader>
           </material>
@@ -1097,8 +1163,8 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
             </mesh>
           </geometry>
           <surface>
@@ -1150,7 +1216,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-2.204 4.6581 0.106083 0 -0 0</pose>
+      <pose>-3.42795 4.84718 0.209407 0 -0 0</pose>
     </model>
     <model name='plant_1_0'>
       <link name='link'>
@@ -1174,23 +1240,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -1202,7 +1264,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -1255,7 +1317,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-2.11831 4.79887 0 0 -0 0</pose>
+      <pose>-3.13045 4.87418 0 0 -0 0</pose>
     </model>
     <model name='plant_1_1'>
       <link name='link'>
@@ -1279,23 +1341,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -1307,7 +1365,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -1360,7 +1418,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-1.73127 4.82496 0 0 -0 0</pose>
+      <pose>-2.84926 4.85798 0 0 -0 0</pose>
     </model>
     <model name='plant_2_0'>
       <link name='link'>
@@ -1384,17 +1442,17 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
             </script>
-            <shader type='pixel'>
+            <shader type='normal_map_tangent_space'>
               <normal_map>__default__</normal_map>
             </shader>
           </material>
@@ -1408,8 +1466,8 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
             </mesh>
           </geometry>
           <surface>
@@ -1461,7 +1519,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.986857 4.83933 0 0 -0 0</pose>
+      <pose>-2.48698 4.82011 0 0 -0 0</pose>
     </model>
     <model name='plant_2_1'>
       <link name='link'>
@@ -1485,17 +1543,17 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
             </script>
-            <shader type='pixel'>
+            <shader type='normal_map_tangent_space'>
               <normal_map>__default__</normal_map>
             </shader>
           </material>
@@ -1509,8 +1567,8 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
             </mesh>
           </geometry>
           <surface>
@@ -1562,7 +1620,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.865005 4.78732 0 0 -0 0</pose>
+      <pose>-2.30306 4.80388 0 0 -0 0</pose>
     </model>
     <model name='plant_1_2'>
       <link name='link'>
@@ -1586,23 +1644,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -1614,7 +1668,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -1667,108 +1721,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.987548 4.8304 0 0 -0 0</pose>
-    </model>
-    <model name='plant_2_2'>
-      <link name='link'>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <pose>0 0 0 0 -0 0</pose>
-        <gravity>1</gravity>
-        <inertial>
-          <mass>0.0001</mass>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>1</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.075838 4.8669 0 0 -0 0</pose>
+      <pose>-2.12466 4.84715 0 0 -0 0</pose>
     </model>
     <model name='plant_1_3'>
       <link name='link'>
@@ -1792,23 +1745,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -1820,7 +1769,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -1873,108 +1822,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>-0.32822 4.85202 0 0 -0 0</pose>
-    </model>
-    <model name='plant_2_3'>
-      <link name='link'>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <pose>0 0 0 0 -0 0</pose>
-        <gravity>1</gravity>
-        <inertial>
-          <mass>0.0001</mass>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>1</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.679614 4.89342 0 0 -0 0</pose>
+      <pose>-1.8684 4.8633 0 0 -0 0</pose>
     </model>
     <model name='plant_1_4'>
       <link name='link'>
@@ -1998,23 +1846,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -2026,7 +1870,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -2079,7 +1923,108 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.439392 4.8507 0 0 -0 0</pose>
+      <pose>-1.66257 4.93417 0 0 -0 0</pose>
+    </model>
+    <model name='plant_2_2'>
+      <link name='link'>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.0001</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
+            </script>
+            <shader type='normal_map_tangent_space'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>1</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-1.38525 4.91399 0 0 -0 0</pose>
     </model>
     <model name='plant_1_5'>
       <link name='link'>
@@ -2103,23 +2048,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -2131,7 +2072,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -2184,7 +2125,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.286959 4.87802 0 0 -0 0</pose>
+      <pose>-0.926211 4.9167 0 0 -0 0</pose>
     </model>
     <model name='plant_1_6'>
       <link name='link'>
@@ -2208,23 +2149,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -2236,7 +2173,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -2289,7 +2226,108 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.539062 4.87021 0 0 -0 0</pose>
+      <pose>-0.541933 4.9634 0 0 -0 0</pose>
+    </model>
+    <model name='plant_2_3'>
+      <link name='link'>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.0001</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
+            </script>
+            <shader type='normal_map_tangent_space'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>1</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-0.041501 4.97823 0 0 -0 0</pose>
     </model>
     <model name='plant_1_7'>
       <link name='link'>
@@ -2313,23 +2351,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -2341,7 +2375,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -2394,209 +2428,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.847404 4.87021 0 0 -0 0</pose>
-    </model>
-    <model name='plant_2_4'>
-      <link name='link'>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <pose>0 0 0 0 -0 0</pose>
-        <gravity>1</gravity>
-        <inertial>
-          <mass>0.0001</mass>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>1</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>1.19878 4.8774 0 0 -0 0</pose>
-    </model>
-    <model name='plant_2_5'>
-      <link name='link'>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <pose>0 0 0 0 -0 0</pose>
-        <gravity>1</gravity>
-        <inertial>
-          <mass>0.0001</mass>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>1</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>1.49262 4.84122 0 0 -0 0</pose>
+      <pose>0.115246 4.97407 0 0 -0 0</pose>
     </model>
     <model name='plant_1_8'>
       <link name='link'>
@@ -2620,23 +2452,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -2648,7 +2476,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -2701,9 +2529,9 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>1.72927 4.81251 0 0 -0 0</pose>
+      <pose>0.385819 4.99535 0 0 -0 0</pose>
     </model>
-    <model name='plant_2_6'>
+    <model name='plant_2_4'>
       <link name='link'>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
@@ -2725,17 +2553,17 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
             </script>
-            <shader type='pixel'>
+            <shader type='normal_map_tangent_space'>
               <normal_map>__default__</normal_map>
             </shader>
           </material>
@@ -2749,8 +2577,8 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
             </mesh>
           </geometry>
           <surface>
@@ -2802,7 +2630,108 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.14518 4.79103 0 0 -0 0</pose>
+      <pose>0.804472 4.99647 0 0 -0 0</pose>
+    </model>
+    <model name='plant_2_5'>
+      <link name='link'>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.0001</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
+            </script>
+            <shader type='normal_map_tangent_space'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>1</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>0.957901 4.98892 0 0 -0 0</pose>
     </model>
     <model name='plant_1_9'>
       <link name='link'>
@@ -2826,23 +2755,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -2854,7 +2779,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -2907,7 +2832,108 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.33878 4.74799 0 0 -0 0</pose>
+      <pose>1.11758 5.02942 0 0 -0 0</pose>
+    </model>
+    <model name='plant_2_6'>
+      <link name='link'>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.0001</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
+            </script>
+            <shader type='normal_map_tangent_space'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>1</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>1.56113 5.03168 0 0 -0 0</pose>
     </model>
     <model name='plant_1_10'>
       <link name='link'>
@@ -2931,23 +2957,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -2959,7 +2981,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -3012,7 +3034,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.70451 4.73367 0 0 -0 0</pose>
+      <pose>1.61239 5.06162 0 0 -0 0</pose>
     </model>
     <model name='plant_2_7'>
       <link name='link'>
@@ -3036,17 +3058,17 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
             </script>
-            <shader type='pixel'>
+            <shader type='normal_map_tangent_space'>
               <normal_map>__default__</normal_map>
             </shader>
           </material>
@@ -3060,8 +3082,8 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
             </mesh>
           </geometry>
           <surface>
@@ -3113,112 +3135,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>3.07022 4.74083 0 0 -0 0</pose>
-    </model>
-    <model name='plant_1_11'>
-      <link name='link'>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <pose>0 0 0 0 -0 0</pose>
-        <gravity>1</gravity>
-        <inertial>
-          <mass>0.0001</mass>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
-              <scale>0.7 0.7 0.7</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>1</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
-              <scale>0.7 0.7 0.7</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>3.28345 4.75745 0 0 -0 0</pose>
+      <pose>1.98111 5.0687 0 0 -0 0</pose>
     </model>
     <model name='plant_2_8'>
       <link name='link'>
@@ -3242,17 +3159,17 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
             </script>
-            <shader type='pixel'>
+            <shader type='normal_map_tangent_space'>
               <normal_map>__default__</normal_map>
             </shader>
           </material>
@@ -3266,8 +3183,8 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
             </mesh>
           </geometry>
           <surface>
@@ -3319,9 +3236,9 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>3.57012 4.81481 0 0 -0 0</pose>
+      <pose>2.27712 5.06904 0 0 -0 0</pose>
     </model>
-    <model name='plant_1_12'>
+    <model name='plant_1_11'>
       <link name='link'>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
@@ -3343,23 +3260,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
               <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
             </script>
             <shader type='pixel'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -3371,7 +3284,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -3424,112 +3337,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>3.80679 4.76461 0 0 -0 0</pose>
-    </model>
-    <model name='plant_1_13'>
-      <link name='link'>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-        <pose>0 0 0 0 -0 0</pose>
-        <gravity>1</gravity>
-        <inertial>
-          <mass>0.0001</mass>
-          <pose>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-        </inertial>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
-              <scale>0.7 0.7 0.7</scale>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
-            </script>
-            <shader type='pixel'>
-              <normal_map>__default__</normal_map>
-            </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
-          </material>
-          <pose>0 0 0 0 -0 0</pose>
-          <transparency>0</transparency>
-          <cast_shadows>1</cast_shadows>
-        </visual>
-        <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>1</max_contacts>
-          <pose>0 0 0 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
-              <scale>0.7 0.7 0.7</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-                <fdir1>0 0 0</fdir1>
-                <slip1>0</slip1>
-                <slip2>0</slip2>
-              </ode>
-              <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
-              </torsional>
-            </friction>
-            <bounce>
-              <restitution_coefficient>0</restitution_coefficient>
-              <threshold>1e+06</threshold>
-            </bounce>
-            <contact>
-              <collide_without_contact>0</collide_without_contact>
-              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
-              <collide_bitmask>1</collide_bitmask>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-              <bullet>
-                <split_impulse>1</split_impulse>
-                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-              </bullet>
-            </contact>
-          </surface>
-        </collision>
-      </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>4.01997 4.73707 0 0 -0 0</pose>
+      <pose>2.33164 5.09094 0 0 -0 0</pose>
     </model>
     <model name='plant_2_9'>
       <link name='link'>
@@ -3553,17 +3361,17 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_2/scripts</uri>
-              <uri>model://plant_2/textures</uri>
-              <name>smallPlantMat/Diffuse</name>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
             </script>
-            <shader type='pixel'>
+            <shader type='normal_map_tangent_space'>
               <normal_map>__default__</normal_map>
             </shader>
           </material>
@@ -3577,8 +3385,8 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_2/meshes/small_plant.dae</uri>
-              <scale>4 4 4</scale>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
             </mesh>
           </geometry>
           <surface>
@@ -3630,9 +3438,9 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>4.40432 4.80357 0 0 -0 0</pose>
+      <pose>2.70595 5.12948 0 0 -0 0</pose>
     </model>
-    <model name='plant_1_14'>
+    <model name='plant_2_10'>
       <link name='link'>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
@@ -3654,23 +3462,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://plant_1/meshes/plant.dae</uri>
-              <scale>0.7 0.7 0.7</scale>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
             </mesh>
           </geometry>
           <material>
             <script>
-              <uri>model://plant_1/scripts</uri>
-              <uri>model://plant_1/textures</uri>
-              <name>plantMat/Diffuse</name>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
             </script>
-            <shader type='pixel'>
+            <shader type='normal_map_tangent_space'>
               <normal_map>__default__</normal_map>
             </shader>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>
           <transparency>0</transparency>
@@ -3682,7 +3486,108 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant.dae</uri>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.95412 5.09244 0 0 -0 0</pose>
+    </model>
+    <model name='plant_1_12'>
+      <link name='link'>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.0001</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
+            </script>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>1</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
               <scale>0.7 0.7 0.7</scale>
             </mesh>
           </geometry>
@@ -3735,7 +3640,317 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>4.51952 4.82227 0 0 -0 0</pose>
+      <pose>2.98921 5.05866 0 0 -0 0</pose>
     </model>
+    <model name='plant_2_11'>
+      <link name='link'>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.0001</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
+            </script>
+            <shader type='normal_map_tangent_space'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>1</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>3.32894 5.0899 0 0 -0 0</pose>
+    </model>
+    <model name='plant_2_12'>
+      <link name='link'>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.0001</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>3 3 3</scale>
+              <uri>model://plant_2/meshes/plant_2.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://plant_2/materials/scripts</uri>
+              <uri>model://plant_2/materials/textures</uri>
+              <name>plantMat2/diffuse</name>
+            </script>
+            <shader type='normal_map_tangent_space'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>1</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/brandon/.gazebo/models/plant_2/meshes/plant_2.dae</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>3.49856 5.10516 0 0 -0 0</pose>
+    </model>
+    <model name='plant_1_13'>
+      <link name='link'>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+        <pose>0 0 0 0 -0 0</pose>
+        <gravity>1</gravity>
+        <inertial>
+          <mass>0.0001</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.7 0.7 0.7</scale>
+              <uri>model://plant_1/meshes/plant_1.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://plant_1/materials/scripts</uri>
+              <uri>model://plant_1/materials/textures</uri>
+              <name>plantMat1/diffuse</name>
+            </script>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+          <pose>0 0 0 0 -0 0</pose>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>1</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>/home/brandon/.gazebo/models/plant_1/meshes/plant_1.dae</uri>
+              <scale>0.7 0.7 0.7</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+      </link>
+      <static>1</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>3.55363 5.12724 0 0 -0 0</pose>
+    </model>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-10.9777 3.97667 13.5616 -0 0.8818 0.012002</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
   </world>
 </sdf>

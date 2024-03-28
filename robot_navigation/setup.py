@@ -24,6 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'crop_detector = robot_navigation.crop_detector:main',
+            'crop_follower = robot_navigation.crop_follower:main',
         ],
     },
 )
