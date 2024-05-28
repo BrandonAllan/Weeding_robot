@@ -1,0 +1,20 @@
+twist_mux:
+  ros__parameters:
+    topics:
+      turning:
+        topic: cmd_vel_turning
+        timeout: 0.5
+        priority: 50
+      tracker:
+        topic: cmd_vel_follower
+        timeout: 0.5
+        priority: 30
+      teleoperation:
+        topic: cmd_vel
+        timeout: 0.5
+        priority: 80
+      joystick:
+        topic: cmd_vel_joy
+        timeout: 0.5
+        priority: 100
+

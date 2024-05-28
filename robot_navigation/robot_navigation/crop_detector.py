@@ -21,7 +21,7 @@ class CropDetector(Node):
         self.bridge = CvBridge()
 
         # Threshold for confidence score
-        self.threshold = 0.5
+        self.threshold = 0.4
         
         # Define ROI parameters
         self.roi_start_x = 200  # Starting x-coordinate of ROI

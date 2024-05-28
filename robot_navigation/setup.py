@@ -25,6 +25,8 @@ setup(
         'console_scripts': [
             'crop_detector = robot_navigation.crop_detector:main',
             'crop_follower = robot_navigation.crop_follower:main',
+            'crop_turning = robot_navigation.crop_turning:main',
+            #'navigation_node = robot_navigation.navigation_node:main',
         ],
     },
 )
