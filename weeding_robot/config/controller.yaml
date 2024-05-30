@@ -3,13 +3,13 @@ controller_manager:
     update_rate: 30
     # use_sim_time: true
     
-    diff_cont:
+    diffbot_base_controller:
       type: diff_drive_controller/DiffDriveController
 
-    joint_broad:
+    joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-diff_cont:
+diffbot_base_controller:
   ros__parameters:
 
     publish_rate: 50.0

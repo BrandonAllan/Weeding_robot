@@ -1,6 +1,6 @@
 <library path="diffdrive_robot_hardware">
-    <class name="diff_drive_robot/DiffDriveRobotHardware"
-           type="diff_drive_robot::DiffDriveRobotHardware"
+    <class name="diffdrive_robot/DiffDriveRobotHardware"
+           type="diffdrive_robot::DiffDriveRobotHardware"
            base_class_type="hardware_interface::SystemInterface">
       <description>
         diff drive robot using ros2_control and arduino
