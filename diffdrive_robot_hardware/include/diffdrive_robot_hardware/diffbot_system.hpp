@@ -20,7 +20,7 @@
 #include "diffdrive_robot_hardware/arduino_comms.hpp"
 #include "diffdrive_robot_hardware/wheel.hpp"
 
-namespace DIFFDRIVE_ROBOT
+namespace diffdrive_robot
 {
 class DiffDriveRobotHardware : public hardware_interface::SystemInterface
 {

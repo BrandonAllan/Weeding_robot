@@ -9,7 +9,7 @@
 #include "hardware_interface/types/hardware_interface_type_values.hpp"
 #include "rclcpp/rclcpp.hpp"
 
-namespace DIFFDRIVE_ROBOT
+namespace diffdrive_robot
 {
 hardware_interface::CallbackReturn DiffDriveRobotHardware::on_init(
   const hardware_interface::HardwareInfo & info)
@@ -205,7 +205,7 @@ hardware_interface::return_type DiffDriveRobotHardware::read(
   return hardware_interface::return_type::OK;
 }
 
-hardware_interface::return_type DIFFDRIVE_ROBOT ::DiffDriveRobotHardware::write(
+hardware_interface::return_type diffdrive_robot::DiffDriveRobotHardware::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
   if (!comms_.connected())
@@ -219,8 +219,8 @@ hardware_interface::return_type DIFFDRIVE_ROBOT ::DiffDriveRobotHardware::write(
   return hardware_interface::return_type::OK;
 }
 
-}  // namespace DIFFDRIVE_ROBOT
+}  // namespace diffdrive_robot
 
 #include "pluginlib/class_list_macros.hpp"
 PLUGINLIB_EXPORT_CLASS(
-  DIFFDRIVE_ROBOT::DiffDriveRobotHardware, hardware_interface::SystemInterface)
+  diffdrive_robot::DiffDriveRobotHardware, hardware_interface::SystemInterface)
