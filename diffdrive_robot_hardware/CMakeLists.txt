@@ -42,7 +42,8 @@ target_link_libraries(diffdrive_robot_hardware PUBLIC serial)
 
 # Causes the visibility macros to use dllexport rather than dllimport,
 # which is appropriate when building the dll but not consuming it.
-target_compile_definitions(${PROJECT_NAME} PRIVATE "DIFFDRIVE_ROBOT_BUILDING_DLL")
+target_compile_definitions(diffdrive_robot_hardware PRIVATE "DIFFDRIVE_ROBOT_BUILDING_DLL")
+
 
 # Export hardware plugins
 pluginlib_export_plugin_description_file(hardware_interface diffdrive_robot_hardware.xml)

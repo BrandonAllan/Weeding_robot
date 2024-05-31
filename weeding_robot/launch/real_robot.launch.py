@@ -1,7 +1,5 @@
 import os
-
 from ament_index_python.packages import get_package_share_directory
-
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -11,11 +9,9 @@ from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnProcessStart
 
 def generate_launch_description():
-
     description_package = 'agri_robot_description'
     package_name = 'weeding_robot'
     joystick_package = 'robot_joystick'
-
 
     display = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
@@ -24,27 +20,26 @@ def generate_launch_description():
     )
 
     joystick = IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory(joystick_package),'launch','joystick.launch.py'
-                )]), launch_arguments={'use_sim_time': 'true'}.items()
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory(joystick_package), 'launch', 'joystick.launch.py'
+        )]), launch_arguments={'use_sim_time': 'true'}.items()
     )
 
-    twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
+    twist_mux_params = os.path.join(get_package_share_directory(package_name), 'config', 'twist_mux.yaml')
     twist_mux = Node(
-            package="twist_mux",
-            executable="twist_mux",
-            parameters=[twist_mux_params, {'use_sim_time': True}],
-            remappings=[('/cmd_vel_out','/diff_cont/cmd_vel_unstamped')]
-        )
+        package="twist_mux",
+        executable="twist_mux",
+        parameters=[twist_mux_params],
+        remappings=[('/cmd_vel_out', '/diff_drive_controller/cmd_vel_unstamped')]
+    )
 
     robot_description = Command(['ros2 param get --hide-type /robot_state_publisher robot_description'])
-    controller_params_file = os.path.join(get_package_share_directory(package_name),'config','controller.yaml')
+    controller_params_file = os.path.join(get_package_share_directory(package_name), 'config', 'controller.yaml')
 
     controller_manager = Node(
         package="controller_manager",
         executable="ros2_control_node",
-        parameters=[{'robot_description': robot_description},
-                    controller_params_file]
+        parameters=[{'robot_description': robot_description}, controller_params_file]
     )
 
     delayed_controller_manager = TimerAction(period=3.0, actions=[controller_manager])
@@ -52,7 +47,7 @@ def generate_launch_description():
     diff_drive_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["diff_cont"],
+        arguments=["diff_drive_controller"],
     )
 
     delayed_diff_drive_spawner = RegisterEventHandler(
@@ -65,7 +60,7 @@ def generate_launch_description():
     joint_broad_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["joint_broad"],
+        arguments=["joint_state_broadcaster"],
     )
 
     delayed_joint_broad_spawner = RegisterEventHandler(
@@ -74,7 +69,6 @@ def generate_launch_description():
             on_start=[joint_broad_spawner],
         )
     )
-
 
     return LaunchDescription([
         display,
