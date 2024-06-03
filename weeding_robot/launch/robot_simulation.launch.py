@@ -34,7 +34,7 @@ def generate_launch_description():
             package="twist_mux",
             executable="twist_mux",
             parameters=[twist_mux_params, {'use_sim_time': True}],
-            remappings=[('/cmd_vel_out','/diff_cont/cmd_vel_unstamped')]
+            remappings=[('/cmd_vel_out','/diff_drive_controller/cmd_vel_unstamped')]
         )
 
     gazebo = IncludeLaunchDescription(
@@ -54,34 +54,25 @@ def generate_launch_description():
     diff_drive_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["diff_cont"],
+        arguments=["diff_drive_controller"],
         output='screen'
     )
 
     joint_broad_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["joint_broad"],
+        arguments=["joint_state_broadcaster"],
         output='screen'
     )
 
-    # Combine multiple actions into a single timer action
-    combined_actions = [
-        spawn_entity, 
-        diff_drive_spawner,  
-        joint_broad_spawner  
-    ]
 
-    # Add a timer action to delay before executing the combined actions
-    delay_before_actions = TimerAction(
-        period=5.0,  # Adjust the delay duration as needed
-        actions=combined_actions  # Execute the combined actions after the delay
-    )
 
     return LaunchDescription([
         display,
         #joystick,
         twist_mux,
         gazebo,
-        delay_before_actions,
+        spawn_entity,
+        diff_drive_spawner,
+        joint_broad_spawner
     ])

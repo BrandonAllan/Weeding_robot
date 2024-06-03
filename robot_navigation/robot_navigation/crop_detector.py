@@ -5,7 +5,7 @@ from rclpy.node import Node
 from geometry_msgs.msg import Point
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
-from ultralytics import YOLO
+import torch
 
 class CropDetector(Node):
     def __init__(self):
@@ -14,38 +14,55 @@ class CropDetector(Node):
         self.get_logger().info('Initializing Crop Detector')
         self.image_in_sub = self.create_subscription(Image, '/image_in', self.image_callback, 10)
         self.image_out_pub = self.create_publisher(Image, '/image_out', 10)
-        self.crop_pub  = self.create_publisher(Point,"/detected_crop",10)
+        self.crop_pub = self.create_publisher(Point, "/detected_crop", 10)
 
-        self.model_path = os.path.join('.', 'src', 'robot_navigation', 'config', 'last.pt')
-        self.model = YOLO(self.model_path)
+        self.weights = os.path.join('.', 'src', 'robot_navigation', 'config', 'real_test_weights.pt')
+        self.model = self.load_model(self.weights)
+        self.classes = self.model.names
+        self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        print("\n\nDevice Used:", self.device)
         self.bridge = CvBridge()
 
         # Threshold for confidence score
-        self.threshold = 0.4
-        
+        self.threshold = 0.5
+
         # Define ROI parameters
         self.roi_start_x = 200  # Starting x-coordinate of ROI
         self.roi_end_x = 440    # Ending x-coordinate of ROI
         self.roi_start_y = 0    # Starting y-coordinate of ROI
-        self.roi_end_y = 640    # Ending y-coordinate of ROI
+        self.roi_end_y = 480    # Ending y-coordinate of ROI
+
+    def load_model(self, weights_path):
+        model = torch.hub.load('ultralytics/yolov5', 'custom', path=weights_path)
+        return model
+
+    def draw_rectangles(self, results, frame):
+        for *xyxy, conf, cls in results.xyxy[0]:
+            if conf >= self.threshold:
+                if cls == 0:  # Assuming class_id 0 is for lettuces
+                    color = (0, 0, 255)  # Red color for lettuces
+                elif cls == 1:  # Assuming class_id 1 is for flags
+                    color = (0, 255, 0)  # Green color for flags
+                self.plot_one_box(xyxy, frame, color=color, line_thickness=2)
+        return frame
+
+    def plot_one_box(self, x, img, color=(0, 0, 255), line_thickness=None):
+        # Plots one bounding box on image img
+        tl = line_thickness or int(round(0.002 * max(img.shape[0:2])))  # line thickness
+        c1, c2 = (int(x[0]), int(x[1])), (int(x[2]), int(x[3]))
+        cv2.rectangle(img, c1, c2, color, thickness=tl, lineType=cv2.LINE_AA)
 
     def extract_crop_coordinates(self, results):
         crop_coordinates = []
-        for result in results.boxes.data.tolist(): 
-            x1, y1, x2, y2, score, class_id = result
-            if score > self.threshold and class_id == 0:  
+        for *xyxy, conf, cls in results.xyxy[0]:
+            if conf > self.threshold and cls == 0:  # Assuming class_id 0 is for lettuces
+                x1, y1, x2, y2 = xyxy
                 center_x = (x1 + x2) / 2
                 center_y = (y1 + y2) / 2
                 # Check if the detected crop is within the ROI
                 #if self.roi_start_x <= center_x <= self.roi_end_x and self.roi_start_y <= center_y <= self.roi_end_y:
-                crop_coordinates.append((center_x, center_y))
+                crop_coordinates.append((float(center_x), float(center_y)))
         return crop_coordinates
-
-    def draw_rectangles(self, image, results):
-        for result in results.boxes.data.tolist():
-            x1, y1, x2, y2, score, class_id = result
-            if score > self.threshold and class_id == 0:
-                cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 0, 255), 4)
 
     def image_callback(self, data):
         try:
@@ -57,11 +74,13 @@ class CropDetector(Node):
         # Apply ROI to the image
         roi_image = cv_image[self.roi_start_y:self.roi_end_y, self.roi_start_x:self.roi_end_x]
 
-        results = self.model(roi_image)[0]
-        crop_coordinates = self.extract_crop_coordinates(results)
+        results = self.model(roi_image)
 
         # Draw bounding boxes on the ROI image
-        self.draw_rectangles(roi_image, results)
+        self.draw_rectangles(results, roi_image)
+
+        # Extract crop coordinates
+        crop_coordinates = self.extract_crop_coordinates(results)
 
         # Draw ROI boundaries on the original image
         cv2.rectangle(cv_image, (self.roi_start_x, self.roi_start_y), (self.roi_end_x, self.roi_end_y), (255, 0, 0), 2)
@@ -79,20 +98,18 @@ class CropDetector(Node):
             normalized_x = 2 * ((crop_msg.x) / (self.roi_end_x - self.roi_start_x)) - 1
             normalized_y = -2 * ((crop_msg.y) / (self.roi_end_y - self.roi_start_y)) + 1
 
-
             # Assign normalized coordinates to crop_msg
             crop_msg.x = normalized_x
             crop_msg.y = normalized_y
 
             self.crop_pub.publish(crop_msg)
 
-
 def main(args=None):
     rclpy.init(args=args)
     crop_detector = CropDetector()
     rclpy.spin(crop_detector)
     crop_detector.destroy_node()
-    rclpy.shutdown()   
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
