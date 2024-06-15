@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 10
+    update_rate: 15
     use_sim_time: true
     
     joint_state_broadcaster:
@@ -20,8 +20,8 @@ diff_drive_controller:
     left_wheel_names: ['Left_wheel_joint']
     right_wheel_names: ['Right_wheel_joint']
 
-    wheel_separation: 0.9
-    wheel_radius: 0.126
+    wheel_separation: 0.95
+    wheel_radius: 0.125
 
     open_loop: true
     enable_odom_tf: true

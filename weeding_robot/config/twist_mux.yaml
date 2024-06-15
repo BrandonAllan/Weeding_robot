@@ -4,11 +4,11 @@ twist_mux:
       turning:
         topic: cmd_vel_turning
         timeout: 0.5
-        priority: 50
+        priority: 30
       tracker:
         topic: cmd_vel_follower
         timeout: 0.5
-        priority: 30
+        priority: 50
       teleoperation:
         topic: cmd_vel
         timeout: 0.5

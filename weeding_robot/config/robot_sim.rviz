@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
-        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz_common/Selection
@@ -48,6 +47,58 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        Base_caster_left:
+          Value: true
+        Base_caster_right:
+          Value: true
+        Caster_wheel_left:
+          Value: true
+        Caster_wheel_right:
+          Value: true
+        Left_wheel:
+          Value: true
+        Right_wheel:
+          Value: true
+        base_link:
+          Value: true
+        camera_link:
+          Value: true
+        camera_link_optical:
+          Value: true
+        imu_link:
+          Value: true
+        odom:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        odom:
+          base_link:
+            Base_caster_left:
+              Caster_wheel_left:
+                {}
+            Base_caster_right:
+              Caster_wheel_right:
+                {}
+            Left_wheel:
+              {}
+            Right_wheel:
+              {}
+            camera_link:
+              camera_link_optical:
+                {}
+            imu_link:
+              {}
+      Update Interval: 0
       Value: true
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
@@ -123,62 +174,10 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Class: rviz_default_plugins/TF
-      Enabled: true
-      Frame Timeout: 15
-      Frames:
-        All Enabled: true
-        Base_caster_left:
-          Value: true
-        Base_caster_right:
-          Value: true
-        Caster_wheel_left:
-          Value: true
-        Caster_wheel_right:
-          Value: true
-        Left_wheel:
-          Value: true
-        Right_wheel:
-          Value: true
-        base_link:
-          Value: true
-        camera_link:
-          Value: true
-        camera_link_optical:
-          Value: true
-        imu_link:
-          Value: true
-        odom:
-          Value: true
-      Marker Scale: 1
-      Name: TF
-      Show Arrows: true
-      Show Axes: true
-      Show Names: false
-      Tree:
-        odom:
-          base_link:
-            Base_caster_left:
-              Caster_wheel_left:
-                {}
-            Base_caster_right:
-              Caster_wheel_right:
-                {}
-            Left_wheel:
-              {}
-            Right_wheel:
-              {}
-            camera_link:
-              camera_link_optical:
-                {}
-            imu_link:
-              {}
-      Update Interval: 0
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -221,7 +220,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 7.490560054779053
+      Distance: 4.7539191246032715
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1

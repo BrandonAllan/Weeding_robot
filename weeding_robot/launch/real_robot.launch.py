@@ -22,7 +22,7 @@ def generate_launch_description():
     joystick = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory(joystick_package), 'launch', 'joystick.launch.py'
-        )]), launch_arguments={'use_sim_time': 'true'}.items()
+        )]), launch_arguments={'use_sim_time': 'false'}.items()
     )
 
     twist_mux_params = os.path.join(get_package_share_directory(package_name), 'config', 'twist_mux.yaml')

@@ -4,6 +4,7 @@ import cv2
 from rclpy.node import Node
 from geometry_msgs.msg import Point
 from sensor_msgs.msg import Image
+from std_msgs.msg import String
 from cv_bridge import CvBridge, CvBridgeError
 import torch
 
@@ -15,6 +16,7 @@ class CropDetector(Node):
         self.image_in_sub = self.create_subscription(Image, '/image_in', self.image_callback, 10)
         self.image_out_pub = self.create_publisher(Image, '/image_out', 10)
         self.crop_pub = self.create_publisher(Point, "/detected_crop", 10)
+        self.flag_pub = self.create_publisher(String, "/flag_detected", 1)  # New publisher for flags
 
         self.weights = os.path.join('.', 'src', 'robot_navigation', 'config', 'real_test_weights.pt')
         self.model = self.load_model(self.weights)
@@ -60,7 +62,6 @@ class CropDetector(Node):
                 center_x = (x1 + x2) / 2
                 center_y = (y1 + y2) / 2
                 # Check if the detected crop is within the ROI
-                #if self.roi_start_x <= center_x <= self.roi_end_x and self.roi_start_y <= center_y <= self.roi_end_y:
                 crop_coordinates.append((float(center_x), float(center_y)))
         return crop_coordinates
 
@@ -103,6 +104,15 @@ class CropDetector(Node):
             crop_msg.y = normalized_y
 
             self.crop_pub.publish(crop_msg)
+
+        # Check if any flags are detected
+        flag_detected = any(conf > self.threshold and cls == 1 for *xyxy, conf, cls in results.xyxy[0])
+        flag_msg = String()
+        if flag_detected:
+            flag_msg.data = "flag_detected"
+        else:
+            flag_msg.data = "no_flag"
+        self.flag_pub.publish(flag_msg)
 
 def main(args=None):
     rclpy.init(args=args)
