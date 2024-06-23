@@ -14,7 +14,7 @@ teleop_node:
       x: 1.0
 
     axis_angular:
-      yaw: 0
+      yaw: 2
     scale_angular:
       yaw: 0.5
     scale_angular_turbo:
