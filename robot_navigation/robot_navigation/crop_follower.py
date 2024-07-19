@@ -9,10 +9,10 @@ class CropFollower(Node):
         self.subscription = self.create_subscription(Point, '/detected_crop', self.crop_navigation_callback, 10)
         self.publisher_ = self.create_publisher(Twist, '/cmd_vel_follower', 10)
 
-        self.declare_parameter("angular_chase_multiplier", 0.07)
+        self.declare_parameter("angular_chase_multiplier", 0.3)
         self.declare_parameter("forward_chase_speed", 0.1)
         self.declare_parameter("max_size_thresh", 0.1)
-        self.declare_parameter("filter_value", 0.7)
+        self.declare_parameter("filter_value", 0.3)
         self.declare_parameter("target_lost_timeout", 2.0)
 
         self.angular_chase_multiplier = self.get_parameter('angular_chase_multiplier').get_parameter_value().double_value        
@@ -21,7 +21,7 @@ class CropFollower(Node):
         self.filter_value = self.get_parameter('filter_value').get_parameter_value().double_value
         self.target_lost_timeout = self.get_parameter('target_lost_timeout').get_parameter_value().double_value
 
-        self.timer = self.create_timer(0.1, self.crop_following_callback)
+        self.timer = self.create_timer(0.05, self.crop_following_callback)
         self.target_val = 0.0
         self.target_dist = 0.0
         self.lastrcvtime = time.time()

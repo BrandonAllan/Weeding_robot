@@ -5,7 +5,6 @@
 #include <libserial/SerialPort.h>
 #include <iostream>
 
-
 LibSerial::BaudRate convert_baud_rate(int baud_rate)
 {
   switch (baud_rate)
@@ -21,35 +20,43 @@ LibSerial::BaudRate convert_baud_rate(int baud_rate)
     case 115200: return LibSerial::BaudRate::BAUD_115200;
     case 230400: return LibSerial::BaudRate::BAUD_230400;
     default:
-      std::cout << "Error! Baud rate " << baud_rate << " not supported! Default to 57600" << std::endl;
+      std::cerr << "Error! Baud rate " << baud_rate << " not supported! Default to 57600" << std::endl;
       return LibSerial::BaudRate::BAUD_57600;
   }
 }
 
 class ArduinoComms
 {
-
 public:
-
   ArduinoComms() = default;
 
   void connect(const std::string &serial_device, int32_t baud_rate, int32_t timeout_ms)
   {  
     timeout_ms_ = timeout_ms;
-    serial_conn_.Open(serial_device);
-    serial_conn_.SetBaudRate(convert_baud_rate(baud_rate));
+    try
+    {
+      serial_conn_.Open(serial_device);
+      serial_conn_.SetBaudRate(convert_baud_rate(baud_rate));
+    }
+    catch (const LibSerial::OpenFailed&)
+    {
+      std::cerr << "Failed to open serial device: " << serial_device << std::endl;
+      throw;
+    }
   }
 
   void disconnect()
   {
-    serial_conn_.Close();
+    if (serial_conn_.IsOpen())
+    {
+      serial_conn_.Close();
+    }
   }
 
   bool connected() const
   {
     return serial_conn_.IsOpen();
   }
-
 
   std::string send_msg(const std::string &msg_to_send, bool print_output = false)
   {
@@ -64,7 +71,7 @@ public:
     }
     catch (const LibSerial::ReadTimeout&)
     {
-        std::cerr << "The ReadByte() call has timed out." << std::endl ;
+      std::cerr << "The ReadByte() call has timed out." << std::endl;
     }
 
     if (print_output)
@@ -75,10 +82,9 @@ public:
     return response;
   }
 
-
   void send_empty_msg()
   {
-    std::string response = send_msg("\r");
+    send_msg("\r");
   }
 
   void read_encoder_values(int &val_1, int &val_2)
@@ -93,6 +99,7 @@ public:
     val_1 = std::atoi(token_1.c_str());
     val_2 = std::atoi(token_2.c_str());
   }
+
   void set_motor_values(int val_1, int val_2)
   {
     std::stringstream ss;
@@ -108,8 +115,8 @@ public:
   }
 
 private:
-    LibSerial::SerialPort serial_conn_;
-    int timeout_ms_;
+  LibSerial::SerialPort serial_conn_;
+  int timeout_ms_;
 };
 
 #endif

@@ -12,7 +12,7 @@ def generate_launch_description():
             output='screen',
             parameters=[{
                 'video_device': '/dev/video2',
-                'image_size': [640, 640],  # Supported resolution
+                'image_size': [800, 600],  # Supported resolution
                 'pixel_format': 'YUYV',    # Supported pixel format
                 'time_per_frame': [1, 30], # 30 FPS
                 'camera_frame_id': 'camera_link_optical',
