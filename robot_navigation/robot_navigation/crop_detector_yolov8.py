@@ -23,7 +23,7 @@ class CropDetector(Node):
         self.declare_parameter('threshold', 0.4)
         self.threshold = self.get_parameter('threshold').get_parameter_value().double_value
 
-        self.model_path = os.path.join('.', 'src', 'robot_navigation', 'config', 'last.pt')
+        self.model_path = os.path.join('.', 'src', 'robot_navigation', 'config', 'navigation_weights.pt')
         self.model = YOLO(self.model_path)
         self.bridge = CvBridge()
 
@@ -49,6 +49,10 @@ class CropDetector(Node):
         for result in results.boxes.data.tolist():
             x1, y1, x2, y2, score, class_id = result
             if score > self.threshold and class_id == 0:
+                x1 += self.roi_start_x
+                y1 += self.roi_start_y
+                x2 += self.roi_start_x
+                y2 += self.roi_start_y
                 cv2.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), (0, 0, 255), 4)
 
     def fit_line(self, crop_coordinates, dist_type=cv2.DIST_L2, param=0, reps=0.01, aeps=0.01):
@@ -85,26 +89,26 @@ class CropDetector(Node):
             self.get_logger().error(f"Error converting image: {e}")
             return
 
-        # Apply ROI to the image
+        # Work within the ROI for detection, but don't crop the image
         roi_image = cv_image[self.roi_start_y:self.roi_end_y, self.roi_start_x:self.roi_end_x]
 
         results = self.model(roi_image)[0]
         crop_coordinates = self.extract_crop_coordinates(results)
 
-        # Draw bounding boxes on the ROI image
-        self.draw_rectangles(roi_image, results)
-
+        # Draw bounding boxes within the ROI and adjust coordinates to the original image
+        self.draw_rectangles(cv_image, results)
 
         # Draw ROI boundaries on the original image
         self.plot_roi(cv_image)
 
-        # Publish detected crop coordinates within the ROI
+        # Publish detected crop coordinates and fitted line within the ROI
         if len(crop_coordinates) > 0:
-            
             vx, vy, x0, y0 = self.fit_line(crop_coordinates)
-            x0_norm, y0_norm = self.normalize_coordinates(roi_image, x0, y0)
+            x0 += self.roi_start_x  # Adjust x0 to match the original image
+            y0 += self.roi_start_y  # Adjust y0 to match the original image
 
-            img_with_line = self.plot_fitted_line(roi_image, vx, vy, x0, y0)
+            x0_norm, y0_norm = self.normalize_coordinates(cv_image, x0, y0)
+            img_with_line = self.plot_fitted_line(cv_image, vx, vy, x0, y0)
 
             line_params_msg = Float32MultiArray()
             line_params_msg.data = [float(vx), float(vy), float(x0_norm), float(y0_norm)]
@@ -112,15 +116,18 @@ class CropDetector(Node):
 
             crop_msg = Point()
             crop_msg.x, crop_msg.y = crop_coordinates[0]
-            x_norm, y_norm = self.normalize_coordinates(roi_image, crop_msg.x, crop_msg.y)
-            crop_msg.x = float(x0_norm)
-            crop_msg.y = float(y0_norm)
+            crop_msg.x += self.roi_start_x  # Adjust crop x to match the original image
+            crop_msg.y += self.roi_start_y  # Adjust crop y to match the original image
+            x_norm, y_norm = self.normalize_coordinates(cv_image, crop_msg.x, crop_msg.y)
+            crop_msg.x = float(x_norm)
+            crop_msg.y = float(y_norm)
             self.crop_pub.publish(crop_msg)
         else:
             img_with_line = cv_image
 
         img_out = self.bridge.cv2_to_imgmsg(img_with_line, "bgr8")
         self.image_out_pub.publish(img_out)
+
 
 def main(args=None):
     rclpy.init(args=args)

@@ -13,7 +13,7 @@ class CoordinatePublisher(Node):
 
     def publish_coordinates(self):
         # Example coordinates
-        coordinates =  ('G'+(str(0)+'A')+(str(0)+'B')+(str(-400)+'C'))
+        coordinates =  ('G'+(str(0)+'A')+(str(0)+'B')+(str(-510)+'C'))
         msg = String()
         msg.data = coordinates
         self.publisher_.publish(msg)
