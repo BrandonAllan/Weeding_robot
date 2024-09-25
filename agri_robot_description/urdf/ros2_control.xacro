@@ -49,7 +49,7 @@
             <param name="timeout_ms">1000</param>
             <param name="enc_counts_per_rev">1763</param>
             <param name="pid_p">20</param>
-            <param name="pid_d">120</param>
+            <param name="pid_d">12</param>
             <param name="pid_i">10</param>
             <param name="pid_o">50</param>
         </hardware>
