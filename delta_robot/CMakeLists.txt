@@ -24,7 +24,7 @@ if(BUILD_TESTING)
 endif()
 
 install(PROGRAMS
-  scripts/delta_camera.py
+  src/delta_camera.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

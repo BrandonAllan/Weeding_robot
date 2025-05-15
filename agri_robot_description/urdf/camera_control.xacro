@@ -4,7 +4,7 @@
     <joint name="camera_joint" type="fixed">
         <parent link="base_link"/>
         <child link="camera_link"/>
-        <origin xyz="0.548 0 0" rpy="0 ${5*(pi/12)} 0"/>
+        <origin xyz="0.548 0 0" rpy="0 ${7*(pi/18)} 0"/>
     </joint>
 
     <link name="camera_link">
@@ -39,8 +39,8 @@
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
                     <format>R8G8B8</format>
-                    <width>640</width>
-                    <height>640</height>
+                    <width>800</width>
+                    <height>600</height>
                 </image>
                 <clip>
                     <near>0.05</near>

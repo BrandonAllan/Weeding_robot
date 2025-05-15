@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <!--
-
+  
     <ros2_control name="GazeboSystem" type="system">
         <hardware>
             <plugin>gazebo_ros2_control/GazeboSystem</plugin>
@@ -23,7 +22,6 @@
                 <state_interface name="position"/>
         </joint>
     </ros2_control>
-    -->
 
     <gazebo>
     <plugin name="gazebo_ros_joint_state_publisher"
@@ -36,8 +34,7 @@
     </plugin>
   </gazebo>
 
-
-
+<!--
     <ros2_control name="AgriRobot" type="system">
         <hardware>
             <plugin>diffdrive_robot/DiffDriveRobotHardware</plugin>
@@ -64,11 +61,10 @@
             <state_interface name="velocity"/>
           </joint>
     </ros2_control>
-
+    -->
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
             <parameters>./src/weeding_robot/config/controller.yaml</parameters>
         </plugin>
     </gazebo>
-
 </robot> 
