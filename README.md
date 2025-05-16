@@ -22,33 +22,47 @@ A prototype agricultural robot that autonomously identifies and eliminates weeds
 
 ## 🖼️ Images
 
-![Nav](documentation/images/Navigation.png) 
+<p align="center">
+  <img src="documentation/images/robot_gazebo.png" width="30%" />
+  <img src="documentation/images/robot_solidworks.png" width="27%" />
+  <img src="documentation/images/robot_crop.png" width="18%" />
+</p>
+
 
  
 ---
 
 ## 🔧 Technologies Used
 
+- **ROS2 Humble** – Robot Operating System.
 - **YOLOv8** – Real-time object detection.
-- **ROS2 Foxy** – Robot Operating System middleware.
 - **OpenCV** – Image processing.
 - **Gazebo** – Simulation.
 - **Python & C++** – For nodes and scripts.
-- **Fusion 360 / SolidWorks** – For mechanical design.
-- **Custom PCB** – For robot control.
+- **SolidWorks** – For mechanical design.
 
 ---
 
 ## 🚀 How to Run
 
-### 1. Clone the repository
-  - follow this steps:
-  ```
-    mkdir -p ~/weeding_robot/src
-    colcon build --symlink-install
-    cd src
-    git clone https://github.com/BrandonAllan/Weeding_robot.git .
-  ```
+### 1. Clone the repository and build the workspace
+```bash
+# Create the workspace and source directory
+mkdir -p ~/weeding_robot/src
+cd ~/weeding_robot/src
+
+# Clone the repository into the src folder
+git clone https://github.com/BrandonAllan/Weeding_robot.git .
+
+# Go back to the workspace root
+cd ..
+
+# Build the workspace
+colcon build --symlink-install
+
+# Source the workspace
+source install/setup.bash
+```
 
 # Follow Folder Structure:
 ```
@@ -65,12 +79,19 @@ Weeding_robot
     ├── delta_robot
     |   ├── config
     |   ├── launch
-    |   ├── src          
+    |   └── src          
     ├── diffdrive_robot_hardware
     ├── robot_joystick
+    |   ├── config
+    |   └── launch
     ├── robot_navigation
+    |   ├── config
+    |   ├── launch
+    |   └── robot_navigation
     ├── serial
     └── weeding_robot
+        ├── config
+        └── launch
 ```
 
 ## 🧠 Contact
