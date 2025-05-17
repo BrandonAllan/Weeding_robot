@@ -16,16 +16,16 @@ A prototype agricultural robot that autonomously identifies and eliminates weeds
 
 ## 🎥 Demo Video
 
-![Watch the video](https://github.com/BrandonAllan/Weeding_robot.git)
+*Demo video coming soon!*
 
 ---
 
 ## 🖼️ Images
 
 <p align="center">
-  <img src="documentation/images/robot_gazebo.png" width="30%" />
-  <img src="documentation/images/robot_solidworks.png" width="27%" />
-  <img src="documentation/images/robot_crop.png" width="18%" />
+  <img src="documentation/images/robot_gazebo.png" width="38%" />
+  <img src="documentation/images/robot_solidworks.png" width="35%" />
+  <img src="documentation/images/robot_crop.png" width="23%" />
 </p>
 
 
@@ -93,6 +93,14 @@ Weeding_robot
         ├── config
         └── launch
 ```
+---
+## Navigation
+
+<p align="center">
+  <img src="documentation/gifs/real_crop_detection.gif" width="40%" />
+  <img src="documentation/gifs/sImulation_crop_detection.gif" width="40%" />
+</p>
 
 ## 🧠 Contact
 For inquiries, feedback, or collaboration opportunities, please don't hesitate to reach out to me, Brandon Trujillo. As the maintainer of the project, I'm always open to discussions and potential partnerships. (allanbrandon34@gmail.com)
+
